@@ -5,6 +5,8 @@ Mejoras a desarrollar:
  Personaje(Básico):{
  
  Controles del personaje(Traslación y rotación).
+ 
+ Animaciones básicas(trasladarse,rotar)
   
  Corrección de colición de camara(No traspace).
   
