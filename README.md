@@ -27,12 +27,13 @@ Mejoras a desarrollar:
  
 ***************************************************************************************
 
-Continuidad(Básico){
+Funcionalidad(Básico){
 
 Opción de Poner Pausa
 
 Menu de opciones de configuración(Audio,Calidad de imagen)
 
+Botón de salir
 
 }
 
