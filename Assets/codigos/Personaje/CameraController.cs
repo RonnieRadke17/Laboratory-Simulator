@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
 
         //todo el codigo de abajo es para mirar de arriba y abajo
         Vector3 angle = _camera.eulerAngles;
-        angle.x += input.y * _mouseSensitivity * Time.deltaTime;
+        angle.x -= input.y * _mouseSensitivity * Time.deltaTime;
 
         _camera.eulerAngles = angle;
 

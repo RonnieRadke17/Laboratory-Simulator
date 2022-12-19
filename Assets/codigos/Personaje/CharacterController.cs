@@ -8,12 +8,10 @@ public class CharacterController : MonoBehaviour
     [SerializeField] float _rotationSpeed = 0f;
     
     InputController _inputController = null;
-
+    
     void Awake(){
         _inputController = GetComponent<InputController>();
     }
-
-
 
     void Update()
     {
