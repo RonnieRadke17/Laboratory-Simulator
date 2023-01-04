@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Borrar.unity
-    guid: e17a11ccac0ec1161b075a0e9e86702f
+    path: Assets/Scenes/MainMenu.unity
+    guid: 136b409e196eef9c6a17cafa2cdd70db
+  - enabled: 1
+    path: Assets/Scenes/Exterior.unity
+    guid: eeab340abda8123f0b6761aa38dea9f7
+  - enabled: 1
+    path: Assets/Scenes/Laboratorio.unity
+    guid: 171c9a16554d33e96a0a92649c91401b
   m_configObjects: {}
