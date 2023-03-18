@@ -5,23 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class pauseResume : MonoBehaviour
 {
-    //public GameObject pausePanel;
-    public void mostrar()
+    public GameObject pausePanel;
+    void Start()
     {
-       Debug.Log("saliendo");
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            pause();
+        }
+    }
 
-   /* public void pause(){
-        pausePanel.SetActive(true);
+    public void pause(){
         Time.timeScale = 0;
-        //Cursor.lookState = CursorLockMode.None;
+         Debug.Log("pausado");
+        Cursor.lockState = CursorLockMode.None;
+        pausePanel.SetActive(true);//activa el panel de pausa con la tecla escape
+
     }
 
-    public void resume(){
-        pausePanel.SetActive(false);
+	public void resume(){
         Time.timeScale = 1;
-        //Cursor.lookState = CursorLockMode.Locked;
+        Debug.Log("renaudado");
+        Cursor.lockState = CursorLockMode.Locked;
     }
-*/
 }

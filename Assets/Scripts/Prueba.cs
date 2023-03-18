@@ -10,7 +10,7 @@ public class Prueba : MonoBehaviour
     private void OnMouseDown(){
     	Debug.Log("imprimiee");
         
-        //SceneManager.LoadScene(7);
+        SceneManager.LoadScene(7);
     }
     
 }

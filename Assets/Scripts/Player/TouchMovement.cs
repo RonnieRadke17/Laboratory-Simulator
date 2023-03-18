@@ -24,7 +24,7 @@ public class TouchMovement : MonoBehaviour
         leftFingerID = -1;
         rightFingerID = - 1;
         halfScreen = Screen.width / 2f; 
-
+        Time.timeScale = 1;//esto hace que el programa reanude
     }
 
   

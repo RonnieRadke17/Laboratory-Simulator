@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void menuPrincipal()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     // Update is called once per frame
     public void QuitarJuego()
     {

@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        
+        Time.timeScale = 1;//esto hace que el programa reanude
     }
 
   
