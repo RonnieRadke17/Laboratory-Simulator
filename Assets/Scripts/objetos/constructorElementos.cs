@@ -224,7 +224,6 @@ public class constructorElementos : MonoBehaviour
       return elementos;
     }
 
-
     public void atras(){}//poner cuando ya funcione todo esta funcionalidad
 
     public void resultado(){}//al final
