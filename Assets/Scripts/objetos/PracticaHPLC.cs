@@ -8,9 +8,11 @@ public class PracticaHPLC : MonoBehaviour
     public TextMeshProUGUI mensajeEnPantalla;
     public TextMeshProUGUI mensajeSalida;
     public bool teclaC = false;
+    //public static bool teclaE = false;
     private int practica = 0;//podría ser un bool en lugar de int
+    private int teclaE = 0;
     private static string botellaSeleccionada = "";
-    public bool teclaE = false;
+    //public bool teclaE = false;
     private GameObject lastClickedObject;
     private string valorBotella = botellaSeleccionada;
     //public GameObject tubo;
@@ -21,15 +23,26 @@ public class PracticaHPLC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(botellaSeleccionada);
+       Debug.Log(botellaSeleccionada);
        teclaC = teclaCPresionada();
        Debug.Log("valor botellaaaa: "+valorBotella);
         //teclaTPresionada();
-       
+        teclaEPresionada();
+        teclaOPresionada();
+       Debug.Log("Tecla e:"+teclaE);
     }
 
     void OnMouseDown(){
        if(gameObject.name == "Penicilina"){
+            botellaSeleccionada = gameObject.name;
+       }
+       if(gameObject.name == "Vitamina E"){
+            botellaSeleccionada = gameObject.name;
+       }
+       if(gameObject.name == "Tetracina"){
+            botellaSeleccionada = gameObject.name;
+       }
+       if(gameObject.name == "Ampicilina"){
             botellaSeleccionada = gameObject.name;
        }
     }
@@ -59,11 +72,26 @@ public class PracticaHPLC : MonoBehaviour
             mensajeEnPantalla.gameObject.SetActive(false);
             //Debug.Log("practica iniciada:"+practica);
             //Debug.Log("numero de practica:"+practica);
-            teclaE = true;
+            teclaE++;
             retorno = true;
         }
         return retorno;
     }
+
+    void teclaOPresionada(){
+        if (Input.GetKeyDown(KeyCode.O))
+            {
+            Debug.Log("Se ha presionado la tecla O se ha finalizado el juego");
+            mensajeEnPantalla.text = "";
+            mensajeEnPantalla.gameObject.SetActive(false);
+            mensajeSalida.gameObject.SetActive(false);
+            practica = 0;//podría ser un bool en lugar de int
+            teclaE = 0;
+            botellaSeleccionada = "";
+        }
+        
+    }
+
 
     bool teclaTPresionada(){
         bool retorno = false;
@@ -88,7 +116,7 @@ public class PracticaHPLC : MonoBehaviour
         //if para verificar si iniciamos la practica o ya está en curso
         if(practica>0){//está en curso
         Debug.Log("se cumplió la condición");
-            if(gameObject.name == "maquina" || gameObject.name == "Circle.004"){
+            if(gameObject.name == "Circle.004"){//maquina
                 mensajeEnPantalla.text = "En curso";
                 mensajeEnPantalla.gameObject.SetActive(true);
             }
@@ -131,9 +159,13 @@ public class PracticaHPLC : MonoBehaviour
                     mensajeEnPantalla.text = "Preciona la letra e para iniciar";
                     mensajeEnPantalla.gameObject.SetActive(true);
                     //aqui ponemos la animación de la perilla
-                    if(teclaE){
+                    if(teclaE>0){
                        Debug.Log("Tecla E precionada");
-
+                        // se coloca el tubo
+                        //se prende el uv
+                        //animación frascos
+                        //se da resultados y pantalla final 
+                        resultados();
                     }
                 }
 
@@ -143,7 +175,28 @@ public class PracticaHPLC : MonoBehaviour
         }
     }
 
+    public void resultados(){
+        //aqui mostramos la imagen y luego sale el canvas de bien hecho
+        if(botellaSeleccionada == "Penicilina"){
+            mensajeEnPantalla.text = "Se ha logrado penicilina";
+            mensajeEnPantalla.gameObject.SetActive(true);
+        }
+        
+        if(botellaSeleccionada == "Vitamina E"){
+            mensajeEnPantalla.text = "Se ha logrado Vitamina";
+            mensajeEnPantalla.gameObject.SetActive(true);
+        }
 
+        if(botellaSeleccionada == "Tetracina"){
+            mensajeEnPantalla.text = "Se ha logrado Tetracina";
+            mensajeEnPantalla.gameObject.SetActive(true);
+        }
+
+        if(botellaSeleccionada == "Ampicilina"){
+            mensajeEnPantalla.text = "Se ha logrado Ampicilina";
+            mensajeEnPantalla.gameObject.SetActive(true);
+        }
+    }
 
     void OnMouseExit(){
         Debug.Log("Salió");
